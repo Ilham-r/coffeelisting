@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
+
+
+
+.App{
+   display: flex;
+   font-family: 'DM Sans', sans-serif;
+   color:#FEF7EE;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.hero{
+    height: 270px;
+    width: 100%;
+}
+.list__page{
+    margin-top: -120px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #1B1D1F;
+    width: 80%;
+    height: auto;
+    margin-bottom: 140px;
+    padding: 90px 50px 50px;
+    border-radius: 12px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list__page-text{
+ position: relative;
+    display: flex;
+    width: 450px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    gap: 20px;
+    z-index: 1;
+
+}
+.list__page-text img{
+    position:absolute;
+    top:-55px;
+    right: -20px;
+    z-index: -1;
+   
+}
+.list__page-text h1{
+ font-size: 2rem;   
+}
+.list__page-text p{
+font-size: 1rem;
+color: #6F757C;
+font-weight: 600;
+}
+button{
+    background-color: transparent;
+    padding: 8px 16px ;
+    border-radius: 8px;
+    border: none;
+    color: #FEF7EE;
+    font-weight: 600;
+     cursor: pointer;
+}
+button.active{
+    background-color: #6F757C;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.list__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:25px;
+}
+.card{
+  display: flex; 
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+  gap: 10px; 
+}
+.card__image{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+.card__image p{
+   background-color: #F6C768; 
+   color: #111315;
+   font-weight: 600;
+   font-size:  0.625rem;
+   margin: 8px;
+   padding: 4px 8px;
+   position:absolute;
+   border-radius: 16px;
+   letter-spacing: 1.2px;
+}
+.card__image img{
+    border-radius: 10px;
+}
+.card__info{
+    display: flex; 
+    justify-content: space-between;   
+    align-items: flex-start;
+    
+}
+.coffee__name{
+font-size: 0.875rem;
+letter-spacing: 1.2px;
+}
+.card__info-column{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.card__info-rating{
+    display: flex;
+    font-size: 0.875rem;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.card__info-rating span{
+   color: #6F757C;
+   font-size: 0.9rem;
+   font-weight: 600;
+
+}
+.card__info-price{
+    color: #111315;
+    background-color:#BEE3CC;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    align-self: flex-end;
+}
+.soldout{
+    color: #ED735D;
+    font-size:  1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+@media screen and (max-width:1024px) {
+    .list__wrapper{
+    grid-template-columns: 1fr 1fr ; }
+
+    }
+    @media screen and (max-width:640px) {
+        .list__page-text{
+            width: 290px;
+        }
+        .list__wrapper{
+        grid-template-columns: 1fr   ; }
+    
+        }    
